@@ -27,7 +27,7 @@
   - name: create ngixn default file path
     ansible.builtin.file:
       path: "/usr/share/nginx/html"
-      state: present
+      state: directory
 
   - name: Extract frontend code
     ansible.builtin.unarchive:
