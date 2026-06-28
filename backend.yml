@@ -49,6 +49,12 @@
       src: backend.service
       dest: "/etc/systemd/system/backend.service"
 
+  - name: Install PyMySQL
+    ansible.builtin.pip:
+      name:
+        - PyMySQL
+      executable: pip3.9
+      
   - name: Import MySQL DB schema
     community.mysql.mysql_db:
       name: all
