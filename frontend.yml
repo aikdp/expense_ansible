@@ -23,14 +23,13 @@
     ansible.builtin.get_url:
       url: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip"
       dest: /tmp/frontend.zip
-      remote_src: true
   
   - name: Extract frontend code
     ansible.builtin.unarchive:
       src: /tmp/frontend.zip
       dest: /usr/share/nginx/html/
 
-  - name: Co[y frontend servcie file to the dest
+  - name: Copy frontend servcie file to the dest
     ansible.builtin.copy:
       src: expense.conf
       dest: /etc/nginx/default.d/expense.conf
