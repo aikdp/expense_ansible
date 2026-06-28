@@ -17,7 +17,7 @@
       enabled: true
 
   - name: Fetch all MySQL facts
-    ansible.mysql.mysql_info:
+    community.mysql.mysql_info:
       login_user: root
       login_password: "{{ mysql_passowrd }}"
       login_host: "{{ host_login }}"
